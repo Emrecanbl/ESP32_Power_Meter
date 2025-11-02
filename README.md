@@ -35,14 +35,14 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 
 <p align="center">
   <!-- Add your prototype photos below when ready -->
-  <img src="Photos/Prototype.jpg" width="30%">&nbsp;&nbsp;
-  <img src="Photos/Prototype_Back1.jpg" width="30%">&nbsp;&nbsp;
-  <img src="Photos/Prototype_Back2.jpg" width="30%"><br>
+  <img src="Photos/Prototype.HEIC" width="30%">&nbsp;&nbsp;
+  <img src="Photos/Prototype_Back1.HEIC" width="30%">&nbsp;&nbsp;
+  <img src="Photos/Prototype_Back2.HEIC" width="30%"><br>
   <em>Prototype (front) &nbsp; | &nbsp; Prototype (back-1) &nbsp; | &nbsp; Prototype (back-2)</em>
 </p>
 
 <p align="center">
-  <img src="Photos/Real_PCB.jpg" width="60%"><br>
+  <img src="Photos/Real_PCB.HEIC" width="60%"><br>
   <em>Assembled PCB (first article)</em>
 </p>
 
