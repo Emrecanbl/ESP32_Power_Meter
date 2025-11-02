@@ -148,7 +148,7 @@ IN/OUT CH3 ├─ Shunt CH3  ─────┘
 ## Roadmap
 
 - [ ] Bring‑up: INA3221 I2C readout
-- [ ] Publish 3D‑printed enclosure (STL + assembly notes)
+- [ ] Publish 3D‑printed enclosure (STL)
 - [ ] USB‑CDC live streaming (no on‑device logs)  
 - [ ] Minimal LVGL screen with live values  
 - [ ] Calibration UI + NVS storage  
