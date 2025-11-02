@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Esp32_F103_PowerMeter_V1")(type "KiCad")(uri "C:/Users/Emrec/Desktop/PCBs/Esp32_F103_PowerMeter_V1.pretty")(options "")(descr ""))
+  (lib (name "Library_IP5306")(type "KiCad")(uri "${KIPRJMOD}/Library_IP5306.pretty")(options "")(descr ""))
+)
