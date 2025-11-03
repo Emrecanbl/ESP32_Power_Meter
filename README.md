@@ -2,7 +2,7 @@
 
 An ESP32-S3–based **three-channel power meter** built around INA3221. It drives a **2.8" SPI TFT (ILI9341) with resistive touch (XPT2046)** using **LVGL**. One channel supports **USB-C pass-through** so you can measure power flowing from **USB-C IN → USB-C OUT**; **CC pins are tied** for basic PD trigger behavior (power-only path).
 
-> Firmware stack: **ESP-IDF + FreeRTOS**.  
+> Firmware stack: **FreeRTOS**.  
 > REST/WebSocket API is **optional** (may be added later).  
 > **No on-device logging** (no SD/flash). Live data appears on-screen and can be streamed over **USB-CDC** if needed.
 >
