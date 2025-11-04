@@ -2,7 +2,7 @@
 
 An ESP32-S3–based **three-channel power meter** built around INA3221. It drives a **2.8" SPI TFT (ILI9341) with resistive touch (XPT2046)** using **LVGL**. One channel supports **USB-C pass-through** so you can measure power flowing from **USB-C IN → USB-C OUT**; **CC pins are tied** for basic PD trigger behavior (power-only path).
 
-> Firmware stack: **ESP-IDF + FreeRTOS**.  
+> Firmware stack: **FreeRTOS**.  
 > REST/WebSocket API is **optional** (may be added later).  
 > **No on-device logging** (no SD/flash). Live data appears on-screen and can be streamed over **USB-CDC** if needed.
 >
@@ -15,6 +15,7 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 
 - **3 measurement channels** via **INA3221**
   - Voltage (V), Current (A), Power (W), accumulated **mAh / mWh**
+  - Efficiency Measurement The board can measure real conversion efficiency by comparing input and output power
 - **ESP32-S3** (Wi‑Fi + native USB/CDC)
   - UART header and USB device available on the board
 - **2.8" ILI9341** SPI TFT + **XPT2046** touch, **LVGL** user interface
@@ -34,7 +35,7 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 </p>
 
 <p align="center">
-  <img src="Photos/WEBUI.png" width="85%"><br>
+  <img src="Photos/WEBUI.png" width="60%"><br>
   <em>Early Web UI (prototype)</em>
 </p>
 
@@ -48,7 +49,12 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 
 <p align="center">
   <img src="Photos/Real_PCB.jpg" width="60%"><br>
-  <em>Assembled PCB (first article)</em>
+  <em>Producted PCB (first article)</em>
+</p>
+
+<p align="center">
+  <img src="Photos/PCB_Assembled.jpg" width="60%"><br>
+  <em>Assembled PCB </em>
 </p>
 
 <p align="center">
@@ -113,7 +119,13 @@ IN/OUT CH3 ├─ Shunt CH3  ─────┘
 ```
 
 ---
+### Efficiency Measurement
+The board can measure real conversion efficiency by comparing input and output power:
 
+- Channels: CH1 = input (P_in), CH2 = output (P_out)
+- Instantaneous: η_inst = P_out / P_in
+- Averaged (stable): EMA over 1–3 s → η_avg =  P̄_out / P̄_in
+- Energy-based: η_energy = ΔmWh_out / ΔmWh_in (robust against short spikes)
 ## Calibration (planned)
 
 1. Use a known load and a reference DMM per channel.  
