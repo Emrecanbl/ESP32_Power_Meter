@@ -9,8 +9,8 @@ bool  energyRunning[3] = {false,  false, false};
 bool reset_status[3] = {false,  false, false};
 
 // Replace with your network credentials
-const char* ssid     = "FRITZ!Box 7530 JH";
-const char* password = "99720031515012343251";
+const char* ssid     = "";
+const char* password = "";
 // Variable to store the HTTP request
 String header;
 // Set web server port number to 80
