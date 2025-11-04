@@ -25,7 +25,14 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 - **Enclosure**: custom **3D‑printed** case (to be published)
 
 ---
+## What’s New
 
+  Energy counter buttons are active (Start/Stop/Reset)
+
+  Sensor → UART JSON and Web UI hooked up
+
+  4-task FreeRTOS skeleton: sensor, screen, web, uart
+  
 ## Gallery
 
 <p align="center">
