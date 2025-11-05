@@ -119,7 +119,7 @@ IN/OUT CH3 ├─ Shunt CH3  ─────┘
 
 ## Firmware (planned)
 
-- **Framework:** ESP‑IDF (v5.x) + FreeRTOS  
+- **Framework:** FreeRTOS  
 - **Modules:**
   - `sensor` – INA3221 sampling, filtering, mAh/mWh accumulation  
   - `ui` – LVGL screens: **Live**, **Charts (lightweight)**, **Settings/Calibration**  
