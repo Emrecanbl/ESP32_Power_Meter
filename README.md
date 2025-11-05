@@ -6,7 +6,7 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 
 > Firmware stack: **FreeRTOS**.  
 > REST/WebSocket API is **optional** (may be added later).  
-> **No on-device logging** (no SD/flash). Live data appears on-screen and can be streamed over **USB-CDC** if needed.
+> Live data appears on-screen and can be streamed over **USB-CDC** if needed.
 >
 > A custom **3D-printed enclosure** is planned.
 
@@ -17,7 +17,6 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 
 - **3 measurement channels** via **INA3221**
   - Voltage (V), Current (A), Power (W), accumulated **mAh / mWh**
-  - Efficiency Measurement The board can measure real conversion efficiency by comparing input and output power
 - **ESP32-S3** (Wi‑Fi + native USB/CDC)
   - UART header and USB device available on the board
 - **2.8" ILI9341** SPI TFT + **XPT2046** touch, **LVGL** user interface
