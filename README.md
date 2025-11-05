@@ -28,11 +28,7 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 
 ---
 ## What’s New
-## Display Support
-
-- ✅ **ST7735 (160×128)** — *current default*
-- ⏳ **ILI9341 (320×240)** — *planned / coming soon*
-
+  **ST7735 (160×128)** — *current default*
 
   Energy counter buttons are active (Start/Stop/Reset)
 
