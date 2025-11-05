@@ -16,8 +16,7 @@ String header;
 // Set web server port number to 80
 WebServer server(80);
 void WEB_UI_init(){
-  Serial.begin(115200);
-
+  
   Serial.println("Connecting to ");
   Serial.println(ssid);
 
