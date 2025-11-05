@@ -8,10 +8,17 @@ void Sensor_init(){
   Wire.begin(I2C_SDA, I2C_SCL);
   Serial.println("INA3221 Test Start");
   // Initialize the INA3221
-  if (!ina3221.begin(0x40, &Wire)) { // can use other I2C addresses or buses
-    Serial.println("Failed to find INA3221 chip");
-    while (1)
-      delay(10);
+  bool init_ok = false;
+  for (int attempt = 0; attempt < 10; ++attempt) { // retry 10 times
+    if (ina3221.begin(0x40, &Wire)) { // can use other I2C addresses or buses
+      init_ok = true;
+      break;
+    }
+    delay(100); // wait 100 ms before next attempt
+  }
+  if (!init_ok) {
+    Serial.println("INA3221 init FAIL after 10 attempts");
+    return;
   }
   Serial.println("INA3221 Found!");
 
