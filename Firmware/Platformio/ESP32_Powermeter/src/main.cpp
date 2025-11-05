@@ -21,7 +21,7 @@ static void taskSensor(void* arg) {
 static void taskScreen(void* arg) {
   (void)arg;
   for (;;) {
-    // TODO: screen update
+    TFT_UpdateValues(power_Values);
     vTaskDelay(pdMS_TO_TICKS(SCREEN_PERIOD_MS));
   }
 }
@@ -39,7 +39,7 @@ static void taskWeb(void* arg) {
 static void taskUart(void* arg) {
   (void)arg;
   for (;;) {
-    if (xSemaphoreTake(g_Sensor_read_Mutex, portMAX_DELAY) == pdTRUE){
+    if (xSemaphoreTake(g_Sensor_read_Mutex, 1000) == pdTRUE){
       Sensor_Uart_Out(power_Values);
       xSemaphoreGive(g_Sensor_read_Mutex);
     }
@@ -51,6 +51,7 @@ static void taskUart(void* arg) {
 // --- Setup: only creates tasks ---
 void setup() {
 Serial.begin(115200);
+LCD_ST7735_init();
 Sensor_init();
 WEB_UI_init();
 g_Sensor_read_Mutex = xSemaphoreCreateMutex();

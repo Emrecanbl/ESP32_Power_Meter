@@ -3,8 +3,7 @@
 Adafruit_INA3221 ina3221;
 
 void Sensor_init(){
-
-  while (!Serial)
+  
   delay(10); // Wait for serial port to connect on some boards
   Wire.begin(I2C_SDA, I2C_SCL);
   Serial.println("INA3221 Test Start");

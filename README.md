@@ -28,6 +28,27 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 
 ---
 ## What’s New
+## Display Support
+
+- ✅ **ST7735 (160×128)** — *current default*
+- ⏳ **ILI9341 (320×240)** — *planned / coming soon*
+
+Select display at build time (example `platformio.ini`):
+
+```ini
+[env:esp32-s3-st7735]
+platform = espressif32
+board    = esp32-s3-devkitc-1
+framework = arduino
+build_flags = -DDISPLAY_ST7735
+
+[env:esp32-s3-ili9341]
+platform = espressif32
+board    = esp32-s3-devkitc-1
+framework = arduino
+build_flags = -DDISPLAY_ILI9341
+```
+
 
   Energy counter buttons are active (Start/Stop/Reset)
 
@@ -44,8 +65,9 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 </p>
 
 <p align="center">
-  <img src="Photos/First_Run.jpg" width="60%"><br>
-  <em> First_Run </em>
+  <img src="Photos/First_Run.jpg" width="50%"><br>
+  <img src="Photos/with_st7735.jpg" width="50%"><br>
+  <em> First Run &nbsp; | &nbsp; With ST7735</em>
 </p>
 
 <p align="center">
