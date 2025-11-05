@@ -1,10 +1,12 @@
 #include <main.h>
 #include <Web_Ui.h>
 
+Start_Check Check;
+
 float voltage[3];
 float current[3];
 double power[3];
-float energyWh[3];;
+float energyWh[3];
 bool  energyRunning[3] = {false,  false, false};
 bool reset_status[3] = {false,  false, false};
 
@@ -22,25 +24,41 @@ void WEB_UI_init(){
 
   //connect to your local wi-fi network
   WiFi.begin(ssid, password);
-
+  bool init_ok = false;
   //check wi-fi is connected to wi-fi network
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.print(".");
+  for (int attempt = 0; attempt < 50; ++attempt) {
+    if (WiFi.status() != WL_CONNECTED ) {
+      Serial.print("Trying to Connect Wifi");
+      init_ok = false;
+    }
+    else{
+        bool init_ok = true;
+        Serial.print("Connected to Wifi");
+        break;
+    }
+  delay(1000);
+}
+  if(init_ok == true){
+    Serial.println("");
+    Serial.println("WiFi connected..!");
+    Serial.print("Got IP: ");
+    Serial.println(WiFi.localIP());
+    server.on("/", handle_OnConnect);
+    server.on("/", HTTP_GET, [](){ server.send(200, "text/html", createHTML()); });
+    server.on("/energy", HTTP_POST, handleEnergyCmd);
+    server.on("/energy", HTTP_GET,  handleEnergyCmd);
+    server.onNotFound(handle_NotFound);
+    server.begin();
+    Serial.println("HTTP server started");
+    Check.Wifi_Connected = true;
+    Check.Wifi_ip = WiFi.localIP().toString();
   }
-  Serial.println("");
-  Serial.println("WiFi connected..!");
-  Serial.print("Got IP: ");
-  Serial.println(WiFi.localIP());
-
-  server.on("/", handle_OnConnect);
-  server.on("/", HTTP_GET, [](){ server.send(200, "text/html", createHTML()); });
-  server.on("/energy", HTTP_POST, handleEnergyCmd);
-  server.on("/energy", HTTP_GET,  handleEnergyCmd);
-  server.onNotFound(handle_NotFound);
-
-  server.begin();
-  Serial.println("HTTP server started");
+  else{
+    Serial.println("WiFi NOT connected..!");
+    Serial.println("HTTP server NOT available");
+    Check.Wifi_Connected = false;
+    Check.Wifi_ip = "Not available";
+  }
 }
 void WEB_UI_Stream(PowerSample &Power_Values){
   for (uint8_t i = 0; i < 3; i++) {

@@ -1,9 +1,8 @@
-#include <INA3221.h>
+#include <main.h>
 
 Adafruit_INA3221 ina3221;
 
 void Sensor_init(){
-  
   delay(10); // Wait for serial port to connect on some boards
   Wire.begin(I2C_SDA, I2C_SCL);
   Serial.println("INA3221 Test Start");
@@ -12,12 +11,14 @@ void Sensor_init(){
   for (int attempt = 0; attempt < 10; ++attempt) { // retry 10 times
     if (ina3221.begin(0x40, &Wire)) { // can use other I2C addresses or buses
       init_ok = true;
+      Check.Sensor_Started = true;
       break;
     }
     delay(100); // wait 100 ms before next attempt
   }
   if (!init_ok) {
     Serial.println("INA3221 init FAIL after 10 attempts");
+    Check.Sensor_Started = false;
     return;
   }
   Serial.println("INA3221 Found!");

@@ -10,3 +10,11 @@ static constexpr uint32_t WEB_LOOP_MS = 10; // service HTTP frequently
 static constexpr uint32_t Mutex_Max_Wait_MS = 1000;                 
 
 
+struct Start_Check
+{
+ bool Sensor_Started = false;
+ bool Wifi_Connected = false;
+ String Wifi_ip;
+};
+
+extern Start_Check Check;

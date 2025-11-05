@@ -51,9 +51,9 @@ static void taskUart(void* arg) {
 // --- Setup: only creates tasks ---
 void setup() {
 Serial.begin(115200);
-LCD_ST7735_init();
 Sensor_init();
 WEB_UI_init();
+LCD_ST7735_init();
 g_Sensor_read_Mutex = xSemaphoreCreateMutex();
 // Create tasks (adjust stack/prio/cores)
 xTaskCreatePinnedToCore(taskSensor, "sensor", 4096, nullptr, 3, nullptr, 1);
