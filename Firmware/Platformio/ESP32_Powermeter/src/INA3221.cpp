@@ -80,6 +80,7 @@ void Sensor_Read(PowerSample &Power_Values){
       }
       else{
           Power_Values.energyWh[i] = 0.0;
+          Power_Values.reset_state[i] = false;
       } 
     }
   }
