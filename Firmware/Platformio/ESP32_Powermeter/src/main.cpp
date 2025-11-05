@@ -4,8 +4,7 @@ PowerSample power_Values;
 
 // ---- Sync primitives ----
 static SemaphoreHandle_t g_stateMutex = nullptr; // protects g_latest
-static SemaphoreHandle_t g_Sensor_read_Mutex = nullptr; // protects Sensor_read
-static SemaphoreHandle_t g_Uart_Out_Mutex = nullptr; // protects Uart_Out
+static SemaphoreHandle_t g_Sensor_read_Mutex = nullptr; // protects Sensor_read and Uart_out
 static PowerSample g_latest{}; // last snapshot
 
 // --- Tasks (empty bodies) ---
@@ -42,23 +41,22 @@ static void taskWeb(void* arg) {
 static void taskUart(void* arg) {
   (void)arg;
   for (;;) {
-    if (xSemaphoreTake(g_Uart_Out_Mutex, portMAX_DELAY) == pdTRUE){
+    if (xSemaphoreTake(g_Sensor_read_Mutex, portMAX_DELAY) == pdTRUE){
       Sensor_Uart_Out(power_Values);
-      xSemaphoreGive(g_Uart_Out_Mutex);
+      xSemaphoreGive(g_Sensor_read_Mutex);
     }
-    vTaskDelay(pdMS_TO_TICKS(SENSOR_PERIOD_MS));
+    vTaskDelay(pdMS_TO_TICKS(UART_PERIOD_MS));
   }
 }
 
 
 // --- Setup: only creates tasks ---
 void setup() {
-delay(5000);
+Serial.begin(115200);
 Sensor_init();
 WEB_UI_init();
 g_stateMutex = xSemaphoreCreateMutex();
 g_Sensor_read_Mutex = xSemaphoreCreateMutex();
-g_Uart_Out_Mutex = xSemaphoreCreateMutex();
 // Create tasks (adjust stack/prio/cores)
 xTaskCreatePinnedToCore(taskSensor, "sensor", 4096, nullptr, 3, nullptr, 1);
 xTaskCreatePinnedToCore(taskScreen, "screen", 4096, nullptr, 2, nullptr, 1);
