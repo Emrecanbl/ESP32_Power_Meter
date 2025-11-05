@@ -8,12 +8,12 @@
 // ---------- Shared data model ----------
 struct PowerSample {
     uint32_t ms; // uptime ms
-    float Voltage[3]; // Channel voltage
-    float Current[3]; // Channel current
-    double Power[3]; // Channel power
-    double energyWh[3]; // Channel Total Energie
-    bool counter_state[3]; // Channel Counter State run/stop
-    bool reset_state[3];   // Channel Counter Reset Value
+    float Voltage[3]={0.0,0.0,0.0}; // Channel voltage
+    float Current[3]={0.0,0.0,0.0}; // Channel current
+    double Power[3]={0.0,0.0,0.0}; // Channel power
+    double energyWh[3]={0.0,0.0,0.0}; // Channel Total Energie
+    bool counter_state[3]={false,false,false}; // Channel Counter State run/stop
+    bool reset_state[3]={false,false,false};   // Channel Counter Reset Value
 };
 
 void Sensor_init();

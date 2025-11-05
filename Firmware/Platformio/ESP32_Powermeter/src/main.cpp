@@ -3,9 +3,7 @@
 PowerSample power_Values;
 
 // ---- Sync primitives ----
-static SemaphoreHandle_t g_stateMutex = nullptr; // protects g_latest
 static SemaphoreHandle_t g_Sensor_read_Mutex = nullptr; // protects Sensor_read and Uart_out
-static PowerSample g_latest{}; // last snapshot
 
 // --- Tasks (empty bodies) ---
 static void taskSensor(void* arg) {
@@ -55,7 +53,6 @@ void setup() {
 Serial.begin(115200);
 Sensor_init();
 WEB_UI_init();
-g_stateMutex = xSemaphoreCreateMutex();
 g_Sensor_read_Mutex = xSemaphoreCreateMutex();
 // Create tasks (adjust stack/prio/cores)
 xTaskCreatePinnedToCore(taskSensor, "sensor", 4096, nullptr, 3, nullptr, 1);
