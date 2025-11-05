@@ -38,11 +38,6 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
   
 ## Gallery
 
-<p align="center">
-  <img src="Photos/PCB_Model.jpg" width="45%">&nbsp;&nbsp;
-  <img src="Photos/PCB.jpg" width="45%"><br>
-  <em>3D board render &nbsp; | &nbsp; PCB layout</em>
-</p>
 
 <p align="center">
   <img src="Photos/First_Run.jpg" width="40%">&nbsp;&nbsp;
@@ -53,6 +48,12 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 <p align="center">
   <img src="Photos/WEBUI.png" width="40%"><br>
   <em>Early Web UI (prototype)</em>
+</p>
+
+<p align="center">
+  <img src="Photos/PCB_Model.jpg" width="45%">&nbsp;&nbsp;
+  <img src="Photos/PCB.jpg" width="45%"><br>
+  <em>3D board render &nbsp; | &nbsp; PCB layout</em>
 </p>
 
 <p align="center">
