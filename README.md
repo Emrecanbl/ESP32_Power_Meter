@@ -65,8 +65,8 @@ build_flags = -DDISPLAY_ILI9341
 </p>
 
 <p align="center">
-  <img src="Photos/First_Run.jpg" width="50%"><br>&nbsp;&nbsp;
-  <img src="Photos/with_st7735.jpg" width="50%"><br>
+  <img src="Photos/First_Run.jpg" width="40%"><br>&nbsp;&nbsp;
+  <img src="Photos/with_st7735.jpg" width="40%"><br>
   <em> First Run &nbsp; | &nbsp; With ST7735</em>
 </p>
 
