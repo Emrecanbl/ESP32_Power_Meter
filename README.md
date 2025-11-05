@@ -107,9 +107,7 @@ IN/OUT CH3 ├─ Shunt CH3  ─────┘
 
 ---
 
-## Default Pins (fill in as you finalize)
-
-> Update to your actual `board.h` / `sdkconfig` once the routing is final.
+## Default Pins
 
 | Function                   | ESP32‑S3 Pin |
 |---------------------------|--------------|
