@@ -20,3 +20,4 @@ void Sensor_init();
 void Sensor_Voltage_Read();
 void Sensor_Current_Read();
 void Sensor_Read(PowerSample &Power_Values);
+void Sensor_Uart_Out(PowerSample &Power_Values);

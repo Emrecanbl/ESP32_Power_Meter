@@ -79,6 +79,8 @@ void Sensor_Read(PowerSample &Power_Values){
     }
   }
   lastMs = now;
+}
+void Sensor_Uart_Out(PowerSample &Power_Values){
   // UART table output: CH,V,A,P,Wh
   Serial.println("CH,V,A,P");
   for (uint8_t i = 0; i < 3; i++) {

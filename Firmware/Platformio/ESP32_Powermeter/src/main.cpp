@@ -43,7 +43,7 @@ static void taskUart(void* arg) {
   (void)arg;
   for (;;) {
     if (xSemaphoreTake(g_Uart_Out_Mutex, portMAX_DELAY) == pdTRUE){
-      Sensor_Read(power_Values);
+      Sensor_Uart_Out(power_Values);
       xSemaphoreGive(g_Uart_Out_Mutex);
     }
     vTaskDelay(pdMS_TO_TICKS(SENSOR_PERIOD_MS));
