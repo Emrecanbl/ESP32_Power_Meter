@@ -26,8 +26,16 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 - **Enclosure**: custom **3D‑printed** case (to be published)
 
 ---
+
 ## What’s New
-  **ST7735 (160×128)** — *current default*
+    
+  Added boot-time Check screen: verifies Wi-Fi link and sensor health before entering the UI.
+
+  Check screen now shows connection status and the assigned IP address.
+
+  Main screen updated to display the device IP for quick access to the Web UI.
+
+  ST7735 (160×128) screen added.
 
   Energy counter buttons are active (Start/Stop/Reset)
 
@@ -37,17 +45,16 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
   
 ## Gallery
 
+<p align="center">
+  <img src="Photos/Check_Screen.jpg" width="40%">&nbsp;&nbsp;
+  <img src="Photos/Main_Screen.jpg" width="40%"><br>
+  <em> First Check Screen &nbsp; | &nbsp; Main Screen </em>
+</p>
 
 <p align="center">
   <img src="Photos/First_Run.jpg" width="40%">&nbsp;&nbsp;
   <img src="Photos/with_st7735.jpg" width="40%"><br>
   <em> First Run Without Screen &nbsp; | &nbsp; With ST7735</em>
-</p>
-
-<p align="center">
-  <img src="Photos/Check_Screen.jpg" width="40%">&nbsp;&nbsp;
-  <img src="Photos/Main_Screen.jpg" width="40%"><br>
-  <em> First Check Screen &nbsp; | &nbsp; Main Screen </em>
 </p>
 
 <p align="center">
