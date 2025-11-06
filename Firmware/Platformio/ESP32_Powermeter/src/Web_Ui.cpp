@@ -26,10 +26,9 @@ void WEB_UI_init(){
   WiFi.begin(ssid, password);
   bool init_ok = false;
   //check wi-fi is connected to wi-fi network
-  for (int attempt = 0; attempt < 50; ++attempt) {
+  for (int attempt = 0; attempt < 10; attempt++) {
     if (WiFi.status() != WL_CONNECTED ) {
       Serial.print("Trying to Connect Wifi");
-      init_ok = false;
     }
     else{
         bool init_ok = true;
