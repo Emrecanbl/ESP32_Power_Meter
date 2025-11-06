@@ -45,8 +45,8 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 </p>
 
 <p align="center">
-  <img src="Photos/Check_Screen.jpg.jpg" width="40%">&nbsp;&nbsp;
-  <img src="Photos/Main_Screen.jpg.jpg" width="40%"><br>
+  <img src="Photos/Check_Screen.jpg" width="40%">&nbsp;&nbsp;
+  <img src="Photos/Main_Screen.jpg" width="40%"><br>
   <em> First Check Screen &nbsp; | &nbsp; Main Screen </em>
 </p>
 
