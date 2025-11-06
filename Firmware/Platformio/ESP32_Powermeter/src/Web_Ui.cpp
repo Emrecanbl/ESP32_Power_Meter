@@ -31,7 +31,7 @@ void WEB_UI_init(){
       Serial.print("Trying to Connect Wifi");
     }
     else{
-        bool init_ok = true;
+        init_ok = true;
         Serial.print("Connected to Wifi");
         break;
     }
