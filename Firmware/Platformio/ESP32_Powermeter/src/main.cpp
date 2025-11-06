@@ -9,7 +9,7 @@ static SemaphoreHandle_t g_Sensor_read_Mutex = nullptr; // protects Sensor_read 
 static void taskSensor(void* arg) {
   (void)arg;
   for (;;) {
-    if (xSemaphoreTake(g_Sensor_read_Mutex, portMAX_DELAY) == pdTRUE){
+    if (xSemaphoreTake(g_Sensor_read_Mutex, 100) == pdTRUE){
     Sensor_Read(power_Values);
     xSemaphoreGive(g_Sensor_read_Mutex);
     vTaskDelay(pdMS_TO_TICKS(SENSOR_PERIOD_MS));
@@ -21,7 +21,7 @@ static void taskSensor(void* arg) {
 static void taskScreen(void* arg) {
   (void)arg;
   for (;;) {
-    if (xSemaphoreTake(g_Sensor_read_Mutex, 1000) == pdTRUE){
+    if (xSemaphoreTake(g_Sensor_read_Mutex, 100) == pdTRUE){
       TFT_UpdateValues(power_Values);
       xSemaphoreGive(g_Sensor_read_Mutex);
     }
@@ -45,7 +45,7 @@ static void taskWeb(void* arg) {
 static void taskUart(void* arg) {
   (void)arg;
   for (;;) {
-    if (xSemaphoreTake(g_Sensor_read_Mutex, 1000) == pdTRUE){
+    if (xSemaphoreTake(g_Sensor_read_Mutex, 100) == pdTRUE){
       Sensor_Uart_Out(power_Values);
       xSemaphoreGive(g_Sensor_read_Mutex);
     }
