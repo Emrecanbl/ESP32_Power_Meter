@@ -29,19 +29,19 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 
 ## What’s New
     
-  Added boot-time Check screen: verifies Wi-Fi link and sensor health before entering the UI.
+  - Added boot-time Check screen: verifies Wi-Fi link and sensor health before entering the UI.
 
-  Check screen now shows connection status and the assigned IP address.
+  - Check screen now shows connection status and the assigned IP address.
 
-  Main screen updated to display the device IP for quick access to the Web UI.
+  - Main screen updated to display the device IP for quick access to the Web UI.
 
-  ST7735 (160×128) screen added.
+  - ST7735 (160×128) screen added.
 
-  Energy counter buttons are active (Start/Stop/Reset)
+  - Energy counter buttons are active (Start/Stop/Reset)
 
-  Sensor → UART JSON and Web UI hooked up
+  - Sensor → UART JSON and Web UI hooked up
 
-  4-task FreeRTOS skeleton: sensor, screen, web, uart
+  - 4-task FreeRTOS skeleton: sensor, screen, web, uart
   
 ## Gallery
 
