@@ -13,8 +13,7 @@ bool reset_status[3] = {false,  false, false};
 // Replace with your network credentials
 const char* ssid     = "";
 const char* password = "";
-// Variable to store the HTTP request
-String header;
+
 // Set web server port number to 80
 WebServer server(80);
 void WEB_UI_init(){
