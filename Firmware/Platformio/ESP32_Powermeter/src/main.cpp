@@ -21,7 +21,10 @@ static void taskSensor(void* arg) {
 static void taskScreen(void* arg) {
   (void)arg;
   for (;;) {
-    TFT_UpdateValues(power_Values);
+    if (xSemaphoreTake(g_Sensor_read_Mutex, 1000) == pdTRUE){
+      TFT_UpdateValues(power_Values);
+      xSemaphoreGive(g_Sensor_read_Mutex);
+    }
     vTaskDelay(pdMS_TO_TICKS(SCREEN_PERIOD_MS));
   }
 }
@@ -30,7 +33,10 @@ static void taskScreen(void* arg) {
 static void taskWeb(void* arg) {
   (void)arg;
   for (;;) {
-    WEB_UI_Stream(power_Values);
+    if (xSemaphoreTake(g_Sensor_read_Mutex, 1000) == pdTRUE){
+      WEB_UI_Stream(power_Values);
+      xSemaphoreGive(g_Sensor_read_Mutex);
+    }
     vTaskDelay(pdMS_TO_TICKS(WEB_LOOP_MS));
   }
 }
