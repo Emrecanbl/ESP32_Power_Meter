@@ -28,6 +28,7 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
 ---
 
 ## What’s New
+  - Qt Ui with Python and Sqllite data base entegration
     
   - Added boot-time Check screen: verifies Wi-Fi link and sensor health before entering the UI.
 
@@ -86,9 +87,10 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. It drive
   <em>Schematic (block view)</em>
 </p>
 
-> **Tip:** Place your photos into the repo under `Photos/` with the following filenames:  
-> `PCB.jpg`, `PCB_Model.jpg`, `Prototype.jpg`, `Prototype_Back1.jpg`, `Prototype_Back2.jpg`, `Real_PCB.jpg`, `Schematic.png`.
-
+<p align="center">
+  <img src="Photos/Qt_Ui_Early.png" width="85%"><br>
+  <em> Qt Ui </em>
+</p>
 
 ## Hardware Overview
 
