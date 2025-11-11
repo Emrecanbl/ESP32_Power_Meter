@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "Firmware"
+		},
+		{
+			"name": "ESP32_Powermeter",
+			"path": "Firmware/Platformio/ESP32_Powermeter"
+		}
+	],
+	"settings": {}
+}
