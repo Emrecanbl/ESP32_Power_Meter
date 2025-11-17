@@ -1,4 +1,3 @@
-
 #include "Adafruit_INA3221.h"
 #include <Wire.h>
 
@@ -15,6 +14,8 @@ struct PowerSample {
     bool counter_state[3]={false,false,false}; // Channel Counter State run/stop
     bool reset_state[3]={false,false,false};   // Channel Counter Reset Value
 };
+
+extern Adafruit_INA3221 ina3221;
 
 void Sensor_init();
 void Sensor_Voltage_Read();

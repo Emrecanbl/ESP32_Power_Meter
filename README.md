@@ -70,10 +70,8 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. One chan
 
 <p align="center">
   <!-- Add your prototype photos below when ready -->
-  <img src="Photos/Prototype.jpg" width="30%">&nbsp;&nbsp;
-  <img src="Photos/Prototype_Back1.jpg" width="30%">&nbsp;&nbsp;
-  <img src="Photos/Prototype_Back2.jpg" width="30%"><br>
-  <em>Prototype (front) &nbsp; | &nbsp; Prototype (back-1) &nbsp; | &nbsp; Prototype (back-2)</em>
+  <img src="Photos/Prototype.jpg" width="100%">&nbsp;&nbsp;
+  <em>Prototype (front) </em>
 </p>
 
 <p align="center">
