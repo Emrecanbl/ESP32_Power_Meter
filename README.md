@@ -85,7 +85,7 @@ An ESP32-S3–based **three-channel power meter** built around INA3221. One chan
 </p>
 
 <p align="center">
-  <img src="Photos/Schematic.png" width="85%"><br>
+  <img src="Photos/Schematic.png" width="80%"><br>
   <em>Schematic (block view)</em>
 </p>
 
